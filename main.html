@@ -9,18 +9,39 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        color: #979797;
       }
       html,
       body {
         height: 100%;
       }
       .topNavigation {
-        border: 1px solid blue;
+        /* border: 1px solid blue; */
         width: 100%;
-		/* width: 1920px; */
+        /* width: 1920px; */
         height: 80px;
+        background-color: #9747ff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
       }
-      section{
+      .topLogo1 {
+        margin-left: 50px;
+        width: 130px;
+        height: 40px;
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+      }
+      .topLogo2 {
+        margin-right: 50px;
+        width: 80px;
+        height: 30px;
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+      }
+      section {
         width: 100%;
         height: 100%;
         display: flex;
@@ -33,60 +54,230 @@
         height: 100%;
         /* height: 1000px; */
         display: flex;
-        /* justify-content: center; */
+        justify-content: center;
         /* align-items: center; */
         /* flex-direction: row; */
       }
       .leftNavigation {
         /* border: 1px solid blue; */
-        background-color: blue;
-        width: 40%;
+        /* background-color: blue; */
+        width: 110px;
         height: 100%;
+        display: flex;
+        justify-content: center;
+
+        /* align-items: center; */
       }
+      .floor {
+        list-style-type: none;
+        font-size: 20px;
+      }
+      .floor li {
+        width: 80px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        cursor: pointer;
+      }
+      .floor li.clicked {
+        width: 80px;
+        height: 40px;
+        background-color: #9747ff;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        color: aliceblue;
+      }
+
       .leftSectionNavigation {
         /* border: 1px solid green; */
-        background-color: green;
+        /* background-color: green; */
+        padding-top: 20px;
+        border-right: 3px solid #e0e0e0;
+        border-left: 3px solid #e0e0e0;
         width: 240px;
         height: 100%;
+        display: flex;
+        justify-content: center;
         /* height: 1000px; */
       }
-      @media (max-width: 768px) {
+      .zone {
+        list-style-type: none;
+        font-size: 15px;
+      }
+      .zone li {
+        margin-top: 20px;
+      }
+      /* @media (max-width: 768px) {
         .sideNav {
           display: none;
         }
-    }
-    .main {
-        border: 1px solid red;
+      } */
+      .main {
+        /* border: 1px solid red; */
         width: 100%;
         height: 100%;
-    }
-    .tabBar {
-        background-color: pink;
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        flex-direction: column;
+      }
+      .location {
+        height: 80px;
+        display: flex;
+        align-items: center;
+      }
+      .cabinetAbailable {
+        width: 400px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .cabinetAbailable div {
+        padding: 3px;
+        width: 45px;
+        height: 45px;
+        background-color: #9747ff;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        color: #e0e0e0;
+      }
+      .cabinetPull div {
+        padding: 3px;
+        width: 45px;
+        height: 45px;
+        background-color: #bcbcbc;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        color: #1b1b1b;
+      }
+      .cabinetAbailable img {
+        width: 15px;
+        height: 15px;
+      }
+      .cabinetList.pull img {
+        width: 15px;
+        height: 15px;
+        filter: invert(100%);
+      }
+
+      .tabBar {
+        /* background-color: pink; */
         width: 100%;
         height: 80px;
-    }
-    @media (min-width: 768px) {
+        border-top: 3px solid #e0e0e0;
+        display: flex;
+        align-items: center;
+        /* justify-content: center; */
+      }
+      .tabBar ul {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        padding-left: 60px;
+        padding-right: 60px;
+        /* justify-content: center; */
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      @media (min-width: 768px) {
         .tabBar {
-            display: none;
+          display: none;
         }
-        
-    }
+      }
     </style>
   </head>
   <body>
-    <nav class="topNavigation">위</nav>
+    <nav class="topNavigation">
+      <div class="topLogo1">
+        <img src="./logo.svg" alt="로고" />
+        <img src="./building name.svg" alt="cabi" />
+      </div>
+      <div class="topLogo2">
+        <img src="./account_circle.svg" alt="cabi" />
+        <img src="./package.svg" alt="cabi" />
+      </div>
+    </nav>
     <section>
-        <nav class="sideNav">
-            <div class="leftNavigation">
-				<ul class="floor"></ul>
-			</div>
-            <div class="leftSectionNavigation">
-				<ul class="zone"></ul>
-			</div>
-        </nav>
-        <main class="main"></main>
-
+      <nav class="sideNav">
+        <div class="leftNavigation">
+          <ul class="floor" id="floor">
+            <li class="clicked">HOME</li>
+            <li>2층</li>
+            <li>4층</li>
+            <li>5층</li>
+          </ul>
+        </div>
+        <div class="leftSectionNavigation">
+          <ul class="zone">
+            <li>A</li>
+            <li>B</li>
+            <li>C</li>
+          </ul>
+        </div>
+      </nav>
+      <main class="main">
+        <div class="location">위치</div>
+        <div class="cabinetAbailable">
+          <div><img src="./account_circle.svg" alt="cabi" />1</div>
+          <div><img src="./account_circle.svg" alt="cabi" />2</div>
+          <div><img src="./account_circle.svg" alt="cabi" />3</div>
+          <div><img src="./account_circle.svg" alt="cabi" />4</div>
+          <div><img src="./account_circle.svg" alt="cabi" />5</div>
+          <div><img src="./account_circle.svg" alt="cabi" />6</div>
+          <div><img src="./account_circle.svg" alt="cabi" />7</div>
+          <div><img src="./account_circle.svg" alt="cabi" />8</div>
+        </div>
+      </main>
     </section>
-    <footer class="tabBar"></footer>
+    <footer class="tabBar">
+      <ul class="floor">
+        <li>HOME</li>
+        <li>2층</li>
+        <li>4층</li>
+        <li>5층</li>
+      </ul>
+    </footer>
+    <script>
+      // const listItems = document.querySelectorAll(".floor li");
+      // console.log(listItems);
+
+      // if (listItems == "\0") {
+      //   console.log(" 받아와짐");
+      // }
+      // listItems.forEach((item) => {
+      //   item.addEventListener("click", function () {
+      //     // 현재 클릭한 항목에 'clicked' 클래스 추가
+      //     console.log(" 클릭이벤트발생");
+      //     this.classList.toggle("clicked");
+      //   });
+      // });
+      // });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const floorList = document.querySelector(".floor");
+
+        floorList.addEventListener("click", function (event) {
+          // 클릭된 요소가 LI인지 확인
+          if (event.target.tagName === "LI") {
+            // 이전에 클릭된 모든 LI 요소의 색상을 초기화
+            document
+              .querySelectorAll(".floor li.clicked")
+              .forEach((clickedItem) => {
+                clickedItem.classList.remove("clicked");
+              });
+
+            // 현재 클릭한 LI 요소에 'clicked' 클래스 추가
+            event.target.classList.add("clicked");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
