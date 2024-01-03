@@ -17,7 +17,8 @@
       .topNavigation {
         border: 1px solid blue;
         width: 100%;
-        height: 10%;
+		/* width: 1920px; */
+        height: 80px;
       }
       section{
         width: 100%;
@@ -28,8 +29,9 @@
         flex-direction: row;
       }
       .sideNav {
-        width: 20%;
+        width: 350px;
         height: 100%;
+        /* height: 1000px; */
         display: flex;
         /* justify-content: center; */
         /* align-items: center; */
@@ -44,8 +46,9 @@
       .leftSectionNavigation {
         /* border: 1px solid green; */
         background-color: green;
-        width: 60%;
+        width: 240px;
         height: 100%;
+        /* height: 1000px; */
       }
       @media (max-width: 768px) {
         .sideNav {
@@ -60,7 +63,7 @@
     .tabBar {
         background-color: pink;
         width: 100%;
-        height: 10%;
+        height: 80px;
     }
     @media (min-width: 768px) {
         .tabBar {
@@ -74,8 +77,12 @@
     <nav class="topNavigation">위</nav>
     <section>
         <nav class="sideNav">
-            <div class="leftNavigation"></div>
-            <div class="leftSectionNavigation"></div>
+            <div class="leftNavigation">
+				<ul class="floor"></ul>
+			</div>
+            <div class="leftSectionNavigation">
+				<ul class="zone"></ul>
+			</div>
         </nav>
         <main class="main"></main>
 
