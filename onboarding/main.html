@@ -112,11 +112,11 @@
       .zone li {
         margin-top: 20px;
       }
-      /* @media (max-width: 768px) {
+      @media (max-width: 768px) {
         .sideNav {
           display: none;
         }
-      } */
+      }
       .main {
         /* border: 1px solid red; */
         width: 100%;
@@ -186,6 +186,19 @@
         flex-direction: row;
         justify-content: space-between;
       }
+      .tabBar ul.clicked {
+        width: 80px;
+        height: 40px;
+        background-color: #9747ff;
+        border-radius: 5px;
+        color: #e0e0e0;
+        display: flex;
+        padding-left: 60px;
+        padding-right: 60px;
+        /* justify-content: center; */
+        flex-direction: row;
+        justify-content: space-between;
+      }
       @media (min-width: 768px) {
         .tabBar {
           display: none;
@@ -245,30 +258,32 @@
       </ul>
     </footer>
     <script>
-      // const listItems = document.querySelectorAll(".floor li");
-      // console.log(listItems);
-
-      // if (listItems == "\0") {
-      //   console.log(" 받아와짐");
-      // }
-      // listItems.forEach((item) => {
-      //   item.addEventListener("click", function () {
-      //     // 현재 클릭한 항목에 'clicked' 클래스 추가
-      //     console.log(" 클릭이벤트발생");
-      //     this.classList.toggle("clicked");
-      //   });
-      // });
-      // });
-
       document.addEventListener("DOMContentLoaded", function () {
         const floorList = document.querySelector(".floor");
+        const tabBarList = document.querySelector(".tabBar");
+        var location = document.getElementsByTagName("li");
 
+        // console.log(li);
         floorList.addEventListener("click", function (event) {
           // 클릭된 요소가 LI인지 확인
           if (event.target.tagName === "LI") {
             // 이전에 클릭된 모든 LI 요소의 색상을 초기화
-            document
+            document.getElementsByTagName
               .querySelectorAll(".floor li.clicked")
+              .forEach((clickedItem) => {
+                clickedItem.classList.remove("clicked");
+              });
+
+            // 현재 클릭한 LI 요소에 'clicked' 클래스 추가
+            event.target.classList.add("clicked");
+          }
+        });
+        tabBarList.addEventListener("click", function (event) {
+          // 클릭된 요소가 LI인지 확인
+          if (event.target.tagName === "LI") {
+            // 이전에 클릭된 모든 LI 요소의 색상을 초기화
+            document
+              .querySelectorAll(".tabBar li.clicked")
               .forEach((clickedItem) => {
                 clickedItem.classList.remove("clicked");
               });
@@ -281,3 +296,4 @@
     </script>
   </body>
 </html>
+`₩
