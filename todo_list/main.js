@@ -3,11 +3,19 @@ let addToDo = document.getElementById("addToDo");
 // let toDoList = document.getElementById("toDoList");
 let todolist = document.getElementById("todolist");
 
-inputBox.addEventListener("keyup", function (event) {
-  if (event.key === "Enter") {
-    addTodo();
-  }
+// inputBox.addEventListener("keyup", function (event) {
+//   if (event.key === "Enter") {
+//     addTodo();
+//   }
+// });
+
+inputBox.addEventListener("keypress", (event) => {
+  alert("입력됨");
+  const ENTER = 13;
+  if (event.keyCode === ENTER);
 });
+
+
 
 addToDo.addEventListener("click", function () {
   // 버튼에 클릭 이벤트가 발생하면
@@ -71,6 +79,8 @@ addToDo.addEventListener("click", function () {
       list.style.textDecoration = "none";
     }
   });
+
+
 });
 
 // addToDo.addEventListener("click", function () {
